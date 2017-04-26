@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyShapeViewer.iml" filepath="$PROJECT_DIR$/MyShapeViewer.iml" />
+      <module fileurl="file://D://MyShapeViewer/MyShapeViewer.iml" filepath="D://MyShapeViewer/MyShapeViewer.iml" />
+    </modules>
+  </component>
+</project>
