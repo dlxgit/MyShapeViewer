@@ -1,4 +1,5 @@
 import Shapes.DrawableShape;
+import Shapes.OnDrawCallback;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,20 +8,20 @@ import java.util.ArrayList;
 
 public class DrawingPanel extends JPanel {
     ArrayList<DrawableShape> shapes;
+    OnDrawCallback onDrawCallback;
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        for(DrawableShape shape : shapes) {
-            shape.draw(g);
-        }
+        onDrawCallback.draw(g);
+
     }
 
-    public DrawingPanel(ArrayList<DrawableShape> shapes) {
+    public DrawingPanel(ArrayList<DrawableShape> shapes, OnDrawCallback onDrawCallback) {
         super();
         this.shapes = shapes;
+        this.onDrawCallback = onDrawCallback;
     }
-
 
     @Override
     public Dimension getPreferredSize () {

@@ -1,4 +1,4 @@
-package Shapes;
+package Shapes.Math;
 
 
 public class Vector2 {
@@ -8,6 +8,10 @@ public class Vector2 {
     public Vector2(float x, float y) {
         this.x = x;
         this.y = y;
+    }
+
+    public String toString() {
+        return "vector2[" + x + "," + y + "]";
     }
 
     public float getX() {
@@ -24,5 +28,10 @@ public class Vector2 {
 
     public void setY(float y) {
         this.y = y;
+    }
+
+    public void reset() {
+        this.x = 0;
+        this.y = 0;
     }
 }

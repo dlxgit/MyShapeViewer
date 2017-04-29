@@ -1,9 +1,11 @@
 package Shapes;
 
 
+import Shapes.Math.Rect;
+import Shapes.Math.Vector2;
+
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 
 public class Triangle extends DrawableShape {
     ArrayList<Vector2> points;
@@ -29,5 +31,21 @@ public class Triangle extends DrawableShape {
         drawLine(g, p1, p2);
         drawLine(g, p2, p3);
         drawLine(g, p1, p3);
+    }
+
+    @Override
+    public Rect getBoundingRectangle() {
+
+//                (Point (p) (minimum [y1, y2, y3]))
+//        (Point (maximum [x1, x2, x3]) (maximum [y1, y2, y3]))
+
+        float posX = points.stream().min((p1, p2)-> Float.compare(p1.getX(), p2.getX())).get().getX();
+        float posY = points.stream().min((p1, p2)-> Float.compare(p1.getY(), p2.getY())).get().getY();
+
+        float width = points.stream().max((p1, p2)-> Float.compare(p1.getX(), p2.getX())).get().getX();
+        float height = points.stream().max((p1, p2)-> Float.compare(p1.getY(), p2.getY())).get().getY();
+
+
+        return new Rect(new Vector2(posX, posY), new Vector2(width, height));
     }
 }

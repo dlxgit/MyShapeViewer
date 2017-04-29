@@ -1,6 +1,9 @@
 package Shapes;
 
 
+import Shapes.Math.Rect;
+import Shapes.Math.Vector2;
+
 import java.awt.*;
 
 public class Rectangle extends DrawableShape {
@@ -20,5 +23,10 @@ public class Rectangle extends DrawableShape {
     public void move(int x, int y) {
         position.setX(position.getX() + x);
         position.setY(position.getY() + y);
+    }
+
+    @Override
+    public Rect getBoundingRectangle() {
+        return new Rect(position, new Vector2(size.getX() * percentSize.getX() / 100, size.getY() * percentSize.getY() / 100));
     }
 }

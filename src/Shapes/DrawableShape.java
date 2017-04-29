@@ -1,5 +1,10 @@
 package Shapes;
 
+import Shapes.Math.Rect;
+import Shapes.Math.Vector2;
+
+import java.awt.geom.Rectangle2D;
+
 public abstract class DrawableShape implements Drawable, Movable, Resizable{
 
     protected Vector2 position;
@@ -9,6 +14,8 @@ public abstract class DrawableShape implements Drawable, Movable, Resizable{
         this.percentSize = percentSize;
         this.position = position;
     }
+
+    public abstract Rect getBoundingRectangle();
 
     public Vector2 getPosition() {
         return position;
@@ -25,6 +32,7 @@ public abstract class DrawableShape implements Drawable, Movable, Resizable{
     public void setPercentSize(Vector2 percentSize) {
         this.percentSize = percentSize;
     }
+
 
     @Override
     public void move(int x, int y) {

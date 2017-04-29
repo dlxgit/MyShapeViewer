@@ -1,7 +1,11 @@
 package Shapes;
 
 
+import Shapes.Math.Rect;
+import Shapes.Math.Vector2;
+
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 
 public class Ellipse extends DrawableShape {
     float radius;
@@ -24,5 +28,10 @@ public class Ellipse extends DrawableShape {
         //g.drawOval(0, 0, 500, 500);
 //        g.setColor ( Color.RED );
 //        g.fillOval ( moveXBy, RADIUS, X, Y ) ;
+    }
+
+    @Override
+    public Rect getBoundingRectangle() {
+        return new Rect(position, new Vector2(radius * percentSize.getX() / 100, radius * percentSize.getY() / 100));
     }
 }
