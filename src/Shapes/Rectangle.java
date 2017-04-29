@@ -15,4 +15,10 @@ public class Rectangle extends DrawableShape {
     public void draw(Graphics g) {
         g.drawRect((int)position.getX(), (int) position.getY(), (int)(size.getX() * percentSize.getX() / 100), (int) (size.getY() * percentSize.getY() / 100));
     }
+
+    @Override
+    public void move(int x, int y) {
+        position.setX(position.getX() + x);
+        position.setY(position.getY() + y);
+    }
 }

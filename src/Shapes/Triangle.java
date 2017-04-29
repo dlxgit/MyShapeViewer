@@ -18,7 +18,7 @@ public class Triangle extends DrawableShape {
     }
 
     private void drawLine(Graphics g, Vector2 p1, Vector2 p2) {
-        g.drawLine((int)p1.getX(), (int)p1.getY(), (int)p2.getX(), (int)p2.getY());
+        g.drawLine((int)(p1.getX() + position.getX()), (int)(p1.getY() + position.getY()), (int)(p2.getX() + position.getX()), (int)(p2.getY() + position.getX()));
     }
 
     @Override

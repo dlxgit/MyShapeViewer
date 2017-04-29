@@ -1,6 +1,6 @@
 package Shapes;
 
-public abstract class DrawableShape implements Drawable{
+public abstract class DrawableShape implements Drawable, Movable, Resizable{
 
     protected Vector2 position;
     protected Vector2 percentSize;
@@ -24,5 +24,17 @@ public abstract class DrawableShape implements Drawable{
 
     public void setPercentSize(Vector2 percentSize) {
         this.percentSize = percentSize;
+    }
+
+    @Override
+    public void move(int x, int y) {
+        position.setX(position.getX() + x);
+        position.setY(position.getY() + y);
+    }
+
+    @Override
+    public void resize(int w, int h) {
+        percentSize.setX(percentSize.getX() + w);
+        percentSize.setY(percentSize.getY() + h);
     }
 }
